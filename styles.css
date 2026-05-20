@@ -145,8 +145,8 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  background: radial-gradient(ellipse at 20% -10%, rgba(167, 139, 250, 0.16) 0%, transparent 55%),
-              radial-gradient(ellipse at 80% 110%, rgba(78, 205, 196, 0.10) 0%, transparent 55%),
+  background: radial-gradient(ellipse at 20% -10%, rgba(204, 51, 204, 0.16) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 110%, rgba(0, 255, 255, 0.10) 0%, transparent 55%),
               var(--c-bg);
 }
 .hero__noise {
@@ -436,7 +436,23 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
   margin: 0 0 24px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--c-rule);
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
+/* Category icons (Interactive / Cinematic / Business) sourced from collegiategameschallenge.com,
+   recolored to match this site's palette (Business=purple, Cinematic=pink, Interactive=cyan). */
+.cat-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.08));
+}
+.cat-icon--sm { width: 26px; height: 26px; }
+.kicker .cat-icon { margin-right: 4px; }
 .judges__col:nth-child(1) .judges__cat { color: var(--c-interactive); border-bottom-color: rgba(0, 255, 255, 0.3); }
 .judges__col:nth-child(2) .judges__cat { color: var(--c-cinematic); border-bottom-color: rgba(255, 0, 102, 0.3); }
 .judges__col:nth-child(3) .judges__cat { color: var(--c-business); border-bottom-color: rgba(204, 51, 204, 0.3); }
@@ -540,8 +556,8 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
 
 /* Ayzenberg production-partner card */
 .ayz-card {
-  background: linear-gradient(180deg, rgba(78, 205, 196, 0.08) 0%, var(--c-bg-card) 60%);
-  border: 1px solid rgba(78, 205, 196, 0.32);
+  background: linear-gradient(180deg, rgba(0, 255, 255, 0.08) 0%, var(--c-bg-card) 60%);
+  border: 1px solid rgba(0, 255, 255, 0.32);
   border-radius: 10px;
   padding: 36px 32px;
   margin-bottom: 56px;
@@ -563,7 +579,7 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
   text-transform: uppercase;
   color: var(--c-interactive);
   padding: 4px 12px;
-  border: 1px solid rgba(78, 205, 196, 0.32);
+  border: 1px solid rgba(0, 255, 255, 0.32);
   border-radius: 999px;
   margin-bottom: 16px;
 }
@@ -600,7 +616,7 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px 28px;
-  border-top: 1px solid rgba(78, 205, 196, 0.18);
+  border-top: 1px solid rgba(0, 255, 255, 0.18);
   padding-top: 24px;
 }
 .ayz-team__person {
@@ -629,7 +645,7 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
 /* Variant pill colors for the team cards */
 .ayz-card__pill--violet {
   color: var(--c-business);
-  border-color: rgba(167, 139, 250, 0.32);
+  border-color: rgba(204, 51, 204, 0.32);
 }
 .ayz-card__pill--gold {
   color: var(--c-gold);
@@ -637,28 +653,28 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
 }
 .ayz-card__pill--amber {
   color: var(--c-cinematic);
-  border-color: rgba(244, 162, 97, 0.32);
+  border-color: rgba(255, 0, 102, 0.32);
 }
 /* Amber variant — Production & Stewardship */
 .ayz-card:has(.ayz-card__pill--amber) {
-  background: linear-gradient(180deg, rgba(244, 162, 97, 0.09) 0%, var(--c-bg-card) 60%);
-  border-color: rgba(244, 162, 97, 0.32);
+  background: linear-gradient(180deg, rgba(255, 0, 102, 0.09) 0%, var(--c-bg-card) 60%);
+  border-color: rgba(255, 0, 102, 0.32);
 }
 .ayz-card:has(.ayz-card__pill--amber)::before { color: var(--c-cinematic); content: "▶"; font-size: 14px; }
 .ayz-card:has(.ayz-card__pill--amber) .ayz-card__body em { color: var(--c-cinematic); }
-.ayz-card:has(.ayz-card__pill--amber) .ayz-team { border-top-color: rgba(244, 162, 97, 0.18); }
+.ayz-card:has(.ayz-card__pill--amber) .ayz-team { border-top-color: rgba(255, 0, 102, 0.18); }
 .ayz-card:has(.ayz-card__pill--amber) .ayz-card__body a {
   color: var(--c-cinematic);
-  border-color: rgba(244, 162, 97, 0.4);
+  border-color: rgba(255, 0, 102, 0.4);
 }
 /* When pill is violet, also tweak the card border + diamond */
 .ayz-card:has(.ayz-card__pill--violet) {
-  background: linear-gradient(180deg, rgba(167, 139, 250, 0.08) 0%, var(--c-bg-card) 60%);
-  border-color: rgba(167, 139, 250, 0.32);
+  background: linear-gradient(180deg, rgba(204, 51, 204, 0.08) 0%, var(--c-bg-card) 60%);
+  border-color: rgba(204, 51, 204, 0.32);
 }
 .ayz-card:has(.ayz-card__pill--violet)::before { color: var(--c-business); }
 .ayz-card:has(.ayz-card__pill--violet) .ayz-card__body em { color: var(--c-business); }
-.ayz-card:has(.ayz-card__pill--violet) .ayz-team { border-top-color: rgba(167, 139, 250, 0.18); }
+.ayz-card:has(.ayz-card__pill--violet) .ayz-team { border-top-color: rgba(204, 51, 204, 0.18); }
 
 /* When pill is gold (IE Law) */
 .ayz-card:has(.ayz-card__pill--gold) {
@@ -1009,4 +1025,34 @@ a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
   .hero__eyebrow .dot { animation: none; }
   .podium__item:hover { transform: none; }
   html { scroll-behavior: auto; }
+}
+
+/* ---------- Founders — understated closing card ---------- */
+.section.founders {
+  padding: 64px 0 96px;
+  text-align: center;
+}
+.section.founders::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--c-rule-strong);
+  margin: 0 auto 40px;
+}
+.founders__line {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--c-text-mute);
+  margin: 0 auto;
+  max-width: 620px;
+}
+.founders__line strong {
+  color: var(--c-text);
+  font-weight: 500;
+  font-style: italic;
 }
