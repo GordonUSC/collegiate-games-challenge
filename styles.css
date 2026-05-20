@@ -6,16 +6,20 @@
   --c-bg: #0E0814;
   --c-bg-elev: #15101D;
   --c-bg-card: #1B1424;
-  --c-text: #F5F1E8;
-  --c-text-mute: #B5AEC0;
-  --c-text-dim: #7A7388;
-  --c-rule: rgba(245, 241, 232, 0.10);
-  --c-rule-strong: rgba(245, 241, 232, 0.22);
+  --c-text: #FFFFFF;
+  --c-text-mute: rgba(255, 255, 255, 0.72);
+  --c-text-dim: rgba(255, 255, 255, 0.48);
+  --c-rule: rgba(255, 255, 255, 0.10);
+  --c-rule-strong: rgba(255, 255, 255, 0.22);
 
-  /* Category accents */
-  --c-interactive: #4ECDC4;   /* teal — play */
-  --c-cinematic: #F4A261;     /* amber — frame */
-  --c-business: #A78BFA;      /* violet — strategy */
+  /* Category accents — official CGC brand palette */
+  --c-interactive: #00FFFF;   /* cyan — play */
+  --c-cinematic: #FF0066;     /* pink — frame */
+  --c-business: #CC33CC;      /* purple — strategy */
+
+  /* Link colors — match collegiategameschallenge.com */
+  --c-link: #FFFF00;          /* neon yellow */
+  --c-link-hover: #FF0066;    /* pink */
 
   /* Medals */
   --c-gold: #F4C95D;
@@ -46,12 +50,12 @@ body {
 }
 
 a {
-  color: var(--c-text);
+  color: var(--c-link);
   text-decoration: none;
-  border-bottom: 1px solid var(--c-rule-strong);
+  border-bottom: 1px solid var(--c-interactive);
   transition: border-color 180ms ease, color 180ms ease;
 }
-a:hover { border-color: var(--c-text); color: var(--c-text); }
+a:hover { border-color: var(--c-business); color: var(--c-link-hover); }
 
 ::selection { background: var(--c-interactive); color: var(--c-bg); }
 
@@ -433,9 +437,9 @@ a:hover { border-color: var(--c-text); color: var(--c-text); }
   padding-bottom: 16px;
   border-bottom: 1px solid var(--c-rule);
 }
-.judges__col:nth-child(1) .judges__cat { color: var(--c-interactive); border-bottom-color: rgba(78, 205, 196, 0.3); }
-.judges__col:nth-child(2) .judges__cat { color: var(--c-cinematic); border-bottom-color: rgba(244, 162, 97, 0.3); }
-.judges__col:nth-child(3) .judges__cat { color: var(--c-business); border-bottom-color: rgba(167, 139, 250, 0.3); }
+.judges__col:nth-child(1) .judges__cat { color: var(--c-interactive); border-bottom-color: rgba(0, 255, 255, 0.3); }
+.judges__col:nth-child(2) .judges__cat { color: var(--c-cinematic); border-bottom-color: rgba(255, 0, 102, 0.3); }
+.judges__col:nth-child(3) .judges__cat { color: var(--c-business); border-bottom-color: rgba(204, 51, 204, 0.3); }
 
 .judge-list {
   list-style: none;
@@ -838,6 +842,32 @@ a:hover { border-color: var(--c-text); color: var(--c-text); }
   .underwriter-card::after { font-size: 24px; right: 24px; top: 22px; }
   .hero__underwriter { font-size: 13px; }
 }
+
+/* Founders — small, understated, end-of-thanks */
+.founders {
+  margin: 56px auto 0;
+  max-width: 640px;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--c-rule);
+  text-align: center;
+}
+.founders__label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-text-mute);
+  margin: 0 0 12px;
+}
+.founders__body {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-text-mute);
+  margin: 0;
+}
+.founders__body strong { color: var(--c-text); font-weight: 500; font-style: normal; font-family: var(--ff-body); }
 
 .thanks__body p {
   font-size: 18px;
